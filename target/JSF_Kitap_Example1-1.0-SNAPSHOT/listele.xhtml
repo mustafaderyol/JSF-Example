@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Kitaplar</title>
+    </h:head>
+    <h:body>
+        <h1>Kitap Listesi</h1>
+        <hr/>
+        <h:dataTable value="#{bean.kitapListesi}" var="liste" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ISBN"/>
+                </f:facet>
+                <h:outputText value="#{liste.isbn}"/>
+            </h:column>
+            
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Adı"/>
+                </f:facet>
+                <h:outputText value="#{liste.adi}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Açılama"/>
+                </f:facet>
+                <h:outputText value="#{liste.aciklama}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Fiyat"/>
+                </f:facet>
+                <h:outputText value="#{liste.fiyat}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Sayfa Sayısı"/>
+                </f:facet>
+                <h:outputText value="#{liste.sayfaSayisi}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Yazar"/>
+                </f:facet>
+                <h:outputText value="#{liste.yazar}"/>
+            </h:column>
+        </h:dataTable>
+        <h:form>
+            <h:link outcome="index.xhtml" value="Yeni Kitap Oluşturma Ekranı"/>
+        </h:form>
+    </h:body>
+</html>
